@@ -68,11 +68,11 @@
     const dragonDrop = new DragonDrop(demo1, {
       handle: '.handle',
       announcement: {
-        grabbed: el => `${el.querySelector('span').innerText} grabbed`,
-        dropped: el => `${el.querySelector('span').innerText} dropped`,
+        grabbed: el => `${el.querySelector('span').innerHTML} grabbed`,
+        dropped: el => `${el.querySelector('span').innerHTML} dropped`,
         reorder: (el, items) => {
           const pos = items.indexOf(el) + 1;
-          const text = el.querySelector('span').innerText;
+          const text = el.querySelector('span').innerHTML;
           return `The rankings have been updated, ${text} is now ranked #${pos} out of ${items.length}`;
         },
         cancel: 'Reranking cancelled.'
@@ -99,11 +99,11 @@
     new DragonDrop(demo2, {
       handle: false,
       announcement: {
-        grabbed: el => `${el.querySelector('div').innerText} grabbed`,
-        dropped: el => `${el.querySelector('div').innerText} dropped`,
+        grabbed: el => `${el.querySelector('div').innerHTML} grabbed`,
+        dropped: el => `${el.querySelector('div').innerHTML} dropped`,
         reorder: (el, items) => {
           const pos = items.indexOf(el) + 1;
-          const text = el.querySelector('div').innerText;
+          const text = el.querySelector('div').innerHTML;
           return `The schedule has changed, ${text} is now item ${pos} of ${items.length}`;
         },
         cancel: 'Reschedule cancelled.'
@@ -152,11 +152,11 @@
       nested: true,
       item: ':scope > li',
       announcement: {
-        grabbed: function (el) { return el.querySelector('span').innerText + ' grabbed'; },
-        dropped: function (el) { return el.querySelector('span').innerText + ' dropped'; },
+        grabbed: function (el) { return el.querySelector('span').innerHTML + ' grabbed'; },
+        dropped: function (el) { return el.querySelector('span').innerHTML + ' dropped'; },
         reorder: function (el, items) {
           var pos = items.indexOf(el) + 1;
-          var text = el.querySelector('span').innerText;
+          var text = el.querySelector('span').innerHTML;
           return 'The order has changed, ' + text + ' is now item ' + pos + ' of ' + items.length;
         },
         cancel: function () { return 'Reorder cancelled.'; }
@@ -182,11 +182,11 @@
       var demo1 = new DragonDrop(document.getElementById('demo-1'), {
         handle: '.handle',
         announcement: {
-          grabbed: function (el) { return el.querySelector('span').innerText + ' grabbed'; },
-          dropped: function (el) { return el.querySelector('span').innerText + ' dropped'; },
+          grabbed: function (el) { return el.querySelector('span').innerHTML + ' grabbed'; },
+          dropped: function (el) { return el.querySelector('span').innerHTML + ' dropped'; },
           reorder: function (el, items) {
             var pos = items.indexOf(el) + 1;
-            var text = el.querySelector('span').innerText;
+            var text = el.querySelector('span').innerHTML;
             return 'The rankings have been updated, ' + text + ' is now ranked #' + pos + ' of ' + items.length;
           },
           cancel: function() { return 'Reranking cancelled.'; }
@@ -214,11 +214,11 @@
       var demo2 = new DragonDrop(document.getElementById('demo-2'), {
         handle: false,
         announcement: {
-          grabbed: function (el) { return el.querySelector('div').innerText + ' grabbed' },
-          dropped: function (el) { return el.querySelector('div').innerText + ' dropped' },
+          grabbed: function (el) { return el.querySelector('div').innerHTML + ' grabbed' },
+          dropped: function (el) { return el.querySelector('div').innerHTML + ' dropped' },
           reorder: function (el, items) {
             var pos = items.indexOf(el) + 1;
-            var text = el.querySelector('div').innerText;
+            var text = el.querySelector('div').innerHTML;
             return 'The schedule has changed, ' + text + ' is now item ' + pos + ' of ' + items.length;
           },
           cancel: function () { return 'Reschedule cancelled.'; }
@@ -233,11 +233,11 @@
         nested: true,
         item: ':scope > li',
         announcement: {
-          grabbed: function (el) { return el.querySelector('span').innerText + ' grabbed'; },
-          dropped: function (el) { return el.querySelector('span').innerText + ' dropped'; },
+          grabbed: function (el) { return el.querySelector('span').innerHTML + ' grabbed'; },
+          dropped: function (el) { return el.querySelector('span').innerHTML + ' dropped'; },
           reorder: function (el, items) {
             var pos = items.indexOf(el) + 1;
-            var text = el.querySelector('span').innerText;
+            var text = el.querySelector('span').innerHTML;
             return 'The order has changed, ' + text + ' is now item ' + pos + ' of ' + items.length;
           },
           cancel: function () { return 'Reorder cancelled.'; }
